@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <div id="page">
+
+        <header id="header">
+            <div class="wrapper">
+                <nav id="nav">
+                    <ul>
+                        <li><a href="">home</a></li>
+                        <li><a href="">shop</a></li>
+                        <li><a href="">cart</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="admin-bar">
+
+        </div>
+
+        <div id="cart">
+
+        </div>
+
+        <main id="main">
+            <section id="products">
+                <!-- <article class="single-product">
+                    <div class="img-product">
+                        <img src="" alt="">
+                    </div>
+                    <h3 class="product-name">Neki proizvod</h3>
+                    <p class="product-description"></p>
+                </article> -->
+            </section>
+        </main>
+
+        <footer id="footer"></footer>
+
+    </div>
+
+    <template id="cart-tpl">
+
+        <div class="product-cart">
+            <h3 style="color:white;">{{product.title}}</h3>
+        </div>
+
+    </template>
+
+    <template id="admin-tpl">
+        <div class="wrapper">
+            <div class="form">
+                <label for="{{names.title}}">Product name</label><br>
+                <input type="text" id="{{names.title}}"><br>
+                <label for="{{names.description}}">Description</label><br>
+                <input type="text" id="{{names.description}}"><br>
+                <label for="">Image</label><br>
+                <input type="file"><br>
+                <button id="{{names.submit}}">Publish product</button>
+
+            </div>
+        </div>
+    </template>
+
+    <template id="product-tpl">
+        <article data-productid="{{product.ID}}" class="single-product">
+            <div class="img-product">
+                <img src="" alt="">
+            </div>
+            <h3 class="product-name" data-productid="{{product.ID}}">{{product.title}}</h3>
+            <p class="product-description" data-productid="{{product.ID}}">{{product.description}}</p>
+            <p class="time">{{product.date}}</p>
+            {{#if loggedInUser}}
+            <button data-productid="{{product.ID}}" class="btn add-to-cart">Add to cart</button>
+            {{/if}}
+        </article>
+    </template>
+
+
+    <script src="js/app.bundle.js"></script>
+</body>
+
+</html>

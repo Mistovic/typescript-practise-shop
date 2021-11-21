@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+  color: #202020;
+  text-decoration: none;
+}
+
+@mixin flex {
+  display: flex;
+  justify-content: flex-start;
+}
+.wrapper {
+  width: 400px;
+  margin: 0 auto;
+}
+#page {
+  position: relative;
+  min-height: 100vh;
+}
+#cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 200px;
+  background: black;
+  height: 100vh;
+}
+#header {
+  background: #f7f7f7;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    @include flex();
+    a {
+      display: block;
+      padding: 10px;
+    }
+  }
+}
+
+#products {
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  .single-product {
+    width: 200px;
+    padding: 10px;
+  }
+}
